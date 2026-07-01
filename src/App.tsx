@@ -62,11 +62,6 @@ const PROJECTS = [
   },
 ]
 
-const TICKER = [
-  'SEMANTIC KERNEL', 'MCP', '.NET', 'AWS', 'TERRAFORM', 'REDIS',
-  'REACT', 'ANGULAR', 'TYPESCRIPT', 'PYTHON', 'DOCKER', 'AGENTS',
-]
-
 /* ---------- pixel robot ---------- */
 function PixelRobot() {
   return (
@@ -229,17 +224,6 @@ export default function App() {
             <PixelRobot />
           </motion.div>
         </header>
-      </div>
-
-      {/* TICKER */}
-      <div className="ticker">
-        <div className="ticker-track">
-          {[...TICKER, ...TICKER].map((t, i) => (
-            <span key={i}>
-              {t} <span className="sep">✦</span>
-            </span>
-          ))}
-        </div>
       </div>
 
       <div className="container">
