@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
+import Game from './Game.tsx'
 
 const ROLES = [
   'I build AI-powered platforms',
@@ -169,6 +170,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 
 export default function App() {
   const typed = useTypewriter(ROLES)
+  const [gameOpen, setGameOpen] = useState(false)
 
   return (
     <>
@@ -176,6 +178,7 @@ export default function App() {
       <div className="bg-grid" />
       <Stars />
       <div className="scanlines" />
+      {gameOpen && <Game onClose={() => setGameOpen(false)} />}
 
       <nav className="nav">
         <span className="nav-logo gradient-text">◆ AG</span>
@@ -185,6 +188,16 @@ export default function App() {
           <a href="#skills">STACK</a>
           <a href="#work">WORK</a>
           <a href="#contact">CONTACT</a>
+          <a
+            href="#play"
+            className="nav-play"
+            onClick={(e) => {
+              e.preventDefault()
+              setGameOpen(true)
+            }}
+          >
+            ▶ PLAY
+          </a>
         </div>
       </nav>
 
@@ -212,6 +225,7 @@ export default function App() {
               <a className="btn btn-primary" href="#contact">GET IN TOUCH</a>
               <a className="btn" href="https://github.com/andyguz17" target="_blank" rel="noreferrer">GITHUB</a>
               <a className="btn" href="https://linkedin.com/in/andres-guzman-a63757139" target="_blank" rel="noreferrer">LINKEDIN</a>
+              <button className="btn play-mobile" onClick={() => setGameOpen(true)}>▶ PLAY</button>
             </div>
           </motion.div>
 
@@ -219,9 +233,13 @@ export default function App() {
             className="hero-art"
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: 1, scale: 1 }}
+            whileHover={{ scale: 1.06 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            onClick={() => setGameOpen(true)}
+            title="Click me — insert coin!"
           >
             <PixelRobot />
+            <span className="press-start">▶ PRESS START</span>
           </motion.div>
         </header>
       </div>
