@@ -333,8 +333,8 @@ export default function Game({ onClose }: { onClose: () => void }) {
       ctx.globalAlpha = 1
 
       if (st.mode === 'title') {
-        text('GUZMAN', W / 2, 140, 30, '#9d7bff')
-        text('INVADERS', W / 2, 185, 30, '#ff4d8d')
+        text('GUZ', W / 2, 140, 30, '#9d7bff')
+        text('VADERS', W / 2, 185, 30, '#ff4d8d')
         const cx = W / 2 - 62
         drawSprite(SQUID[0], cx, 232, '#ffcf5c', 2)
         text('= 40 PTS', cx + 44, 248, 9, '#a49fd6', 'left')
@@ -426,7 +426,7 @@ export default function Game({ onClose }: { onClose: () => void }) {
 
   const inp = inputRef.current
   return (
-    <div className="game-overlay" role="dialog" aria-label="Guzman Invaders minigame">
+    <div className="game-overlay" role="dialog" aria-label="Guz Vaders minigame">
       <div className="game-bar">
         <button className="btn" onClick={() => setMuted((m) => !m)}>{muted ? 'SOUND: OFF' : 'SOUND: ON'}</button>
         <button className="btn" onClick={onClose}>EXIT (ESC)</button>
